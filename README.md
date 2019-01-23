@@ -7,10 +7,10 @@ The website is hosted on a virtual machine in Google Cloud Platform: [here](http
 
 If the link no longer works, here are some images of the website:
 1. Flight Search Navigator
-![Flight Search Navigator](https://github.com/amychen/kayak-data/blob/master/Search%20Flights.png "Flight Search Navigator")
+![Flight Search Navigator](https://github.com/amychen/kayak-data/blob/master/Website-images/Search%20Flights.png "Flight Search Navigator")
 
 2. Location Specific Insights about Price and Flights
-![Location Information](https://github.com/amychen/kayak-data/blob/master/Flight%20Price%20Details.png "Location Specific Insights")
+![Location Information](https://github.com/amychen/kayak-data/blob/master/Website-images/Flight%20Price%20Details.png "Location Specific Insights")
 
 3. Summary of all Flight Prices
-![Summary](https://github.com/amychen/kayak-data/blob/master/Flight%20Summary.png "Flight Price Summary")
+![Summary](https://github.com/amychen/kayak-data/blob/master/Website-images/Flight%20Summary.png "Flight Price Summary")
