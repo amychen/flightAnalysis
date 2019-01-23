@@ -6,4 +6,5 @@ We created a website that tracks flight prices from New York City to 10 popular 
 The website is hosted on a virtual machine in Google Cloud Platform [here](http://35.243.212.161:5000/)
 
 If the link no longer works, here are some images of the website:
-[Example of information given for each location:](https://github.com/amychen/kayak-data/blob/master/Flight%20Price%20Details.png)
+1. ![Search Flight Navigator](https://github.com/amychen/kayak-data/blob/master/Search%20Flights.png)
+2. ![Example of information given for each location:](https://github.com/amychen/kayak-data/blob/master/Flight%20Price%20Details.png)
