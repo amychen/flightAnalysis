@@ -5,21 +5,10 @@
     <title>{{airport}} | {{date}}</title>
     <link href="http://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="dashboard.css" rel="stylesheet">
-      <style>
-          .tab {
-              display: block; 
-              margin-left: auto; 
-              margin-right: auto; 
-              width: 50%;
-          }
-              
-                 
-      </style>
   </head>
   <body>
     <div class="container-fluid">
       <div class="row">
-        
         <main role="main" class="col-md-3 ml-sm-auto col-lg-12 px-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <h1 class="h2">Dashboard</h1>
@@ -33,92 +22,78 @@
               </div>
             </div>
           </div>
-            <h3></h3>
-            <canvas class="my-4 w-100" id="myChart" width="800" height="330"></canvas>
-            <h2 class="alert alert-info" role="alert" style="text-align:center; color:#007BFF;">Kayak's Prediction: {{kayak_pred}}</h2>
-            <h3 class="alert alert-info" role="alert" style="text-align:center; color:#007BFF;">We found this prediction to be {{accuracy_score}}% accurate in the past week</h3>
-            <canvas class="my-4 w-100" id="bargraph" width="800" height="300"></canvas>
-            <div class = 'roow'>
-                <div class = 'column'>
-                    
-                    <img src = {{cluster}} style="display: block; margin-left: auto; margin-right: auto; width: 50%;">
-                    <div class = tab> {{kmean_table | safe}} </div>
-                    
-                </div>
-                <!--<div class = 'column'>
-                   <img src = {{kmean_table}} style="display: block; margin-left: auto; margin-right: auto; width: 50%;" > 
-                </div> -->
-             </div>
-            <br><br>
-            
-            <div class="table-responsive">
-                <h3>Cheapest Flight Prices and Times Seen So Far</h3>
-                <table class="table table-striped table-sm" style="text-align:center">
-                    <thead>
-                        <th>Destination</th>
-                        <th>Airline</th>
-                        <th>Price</th>
-                        <th>Flight Time</th>
-                        <th>Timestamp</th>
-                    </thead>
-                    <tbody>
-                        {%for flight in flights%}
-                        <tr>
-                            <td>
-                                {% if flight.Destination == 'LAS' %}
-                                    {{'Las Vegas'}}
-                                {% endif %}
-                                {% if flight.Destination == 'LAX' %}
-                                    {{'Los Angeles'}}
-                                {% endif %}
-                                {% if flight.Destination == 'CHI' %}
-                                    {{'Chicago'}}
-                                {% endif %}
-                                {% if flight.Destination == 'SFO' %}
-                                    {{'San Francisco'}}
-                                {% endif %}
-                                {% if flight.Destination == 'SEA' %}
-                                    {{'Seattle'}}
-                                {% endif %}
-                                {% if flight.Destination == 'DEN' %}
-                                    {{'Denver'}}
-                                {% endif %}
-                                {% if flight.Destination == 'DCA' %}
-                                    {{'Washington DC'}}
-                                {% endif %}
-                                {% if flight.Destination == 'BOS' %}
-                                    {{'Boston'}}
-                                {% endif %}
-                                {% if flight.Destination == 'ORL' %}
-                                    {{'Orlando'}}
-                                {% endif %}
-                               
-                            </td>
-                            <td>{{flight.Airline}}</td>
-                            <td>{{flight.Price}}</td>
-                            <td>{{flight.Time}}</td>
-                            <td>{{flight.Timestamp}}</td>
-                        </tr>
-                        {%endfor%}
-                    </tbody>
-                </table>
+          <h3></h3>
+          <canvas class="my-4 w-100" id="myChart" width="800" height="330"></canvas>
+          <h2 class="alert alert-info" role="alert" style="text-align:center; color:#007BFF;">Kayak's Prediction: {{kayak_pred}}</h2>
+          <h3 class="alert alert-info" role="alert" style="text-align:center; color:#007BFF;">We found Kayak's prediction to be {{accuracy_score}}% accurate in the past week</h3>
+          <canvas class="my-4 w-100" id="bargraph" width="800" height="300"></canvas>
+          <div class = 'row'>
+            <div class = 'column'>
+              <img src = {{cluster}} style="display: block; margin-left: auto; margin-right: auto; width: 50%;">
+                <div class = tab> {{kmean_table | safe}} </div>
             </div>
-          
+          </div>
+          <br><br>
+            
+          <div class="table-responsive">
+            <h3>Current Cheapest Flight Prices and Times</h3>
+            <table class="table table-striped table-sm" style="text-align:center">
+              <thead>
+                <th>Destination</th>
+                <th>Airline</th>
+                <th>Price</th>
+                <th>Flight Time</th>
+                <th>Timestamp</th>
+              </thead>
+              <tbody>
+                {%for flight in flights%}
+                <tr>
+                  <td>
+                    {% if flight.Destination == 'LAS' %}
+                        {{'Las Vegas'}}
+                    {% endif %}
+                    {% if flight.Destination == 'LAX' %}
+                        {{'Los Angeles'}}
+                    {% endif %}
+                    {% if flight.Destination == 'CHI' %}
+                        {{'Chicago'}}
+                    {% endif %}
+                    {% if flight.Destination == 'SFO' %}
+                        {{'San Francisco'}}
+                    {% endif %}
+                    {% if flight.Destination == 'SEA' %}
+                        {{'Seattle'}}
+                    {% endif %}
+                    {% if flight.Destination == 'DEN' %}
+                        {{'Denver'}}
+                    {% endif %}
+                    {% if flight.Destination == 'DCA' %}
+                        {{'Washington DC'}}
+                    {% endif %}
+                    {% if flight.Destination == 'BOS' %}
+                        {{'Boston'}}
+                    {% endif %}
+                    {% if flight.Destination == 'ORL' %}
+                        {{'Orlando'}}
+                    {% endif %}              
+                  </td>
+                  <td>{{flight.Airline}}</td>
+                  <td>{{flight.Price}}</td>
+                  <td>{{flight.Time}}</td>
+                  <td>{{flight.Timestamp}}</td>
+                </tr>
+                {%endfor%}
+              </tbody>
+            </table>
+          </div>
         </main>
       </div>
     </div>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="../../assets/js/vendor/popper.min.js"></script>
     <script src="../../dist/js/bootstrap.min.js"></script>
-
-    
-    
-    <!-- Graphs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
     <script>
       var ctx = document.getElementById("myChart");

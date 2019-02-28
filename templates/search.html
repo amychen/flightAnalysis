@@ -1,114 +1,53 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="utf-8">
     <title>Tracking Flight Prices</title>
     <link href="http://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="dashboard.css" rel="stylesheet">
-      <style> 
-          #center {
-              position: absolute;
-              text-align: center;
-              margin: 0 auto;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-          }
-          
-          body, html {
-            height: 100%;
-            margin: 0;
-        }
-          
-          form {
-              padding-bottom: 100px;
-              color: white;
-              margin: auto;
-              width: 50%;
-          }
-          
-          select, input {
-              padding: 5px 10px;
-              border: none;
-              border-radius: 4px;
-          }
-          
-         h1 {
-            color: white;
-          }
-          
-          h4 {
-              color: white;
-          }
-
-        .bg {
-            /* The image used */
-            background-image: url("../static/landingpic.jpg");
-
-            /* Full height */
-            height: 100%; 
-
-            /* Center and scale the image nicely */
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-          
-        .sum {
-            padding-bottom: 0px;
-          }
-           
-
-      </style>
   </head>
+
   <body>
-    <div class = 'bg'></div>
+    <div id = 'bg'></div>
     <div id="center">
-        <h1>Pick a Destination</h1>
-    <div class="container-fluid">
-     
-      <div class="row">
-        <form action="/price_over_time" >
-              <select name="airport" class="custom-select">
-                <option value="BOS">Boston, MA</option>
-                <option value="CHI">Chicago, IL</option>
-                <option value="DEN">Denver, CO</option>
-                <option value="LAX">Los Angeles, CA</option>
-                <option value="LAS">Las Vegas, NV</option>
-                <option value="ORL">Orlando, FL</option>
-                <option value="DCA">Washington D.C., MD</option>
-                <option value="SFO">San Francisco, CA</option>
-                <option value="SEA">Seattle, WA</option>
-              </select> 
-              <select name="date" class="custom-select">
-                <option value="2018-12-22">Dec 22nd</option>
-                <option value="2018-12-23">Dec 23rd</option>
-                <option value="2018-12-24">Dec 24th</option>
-                <option value="2018-12-25">Dec 25th</option>
-                <option value="2018-12-26">Dec 26th</option>
-                <option value="2018-12-27">Dec 27th</option>
-                <option value="2018-12-28">Dec 28th</option>
-                <option value="2018-12-29">Dec 29th</option>
-                <option value="2018-12-30">Dec 30th</option>
-                <option value="2018-12-31">Dec 31th</option>
-                <option value="2019-01-01">Jan 1st</option>
-              </select>
-          <br><br>
-          <input type="submit">
-          
-        </form>
-          
-    
-            
-      </div>
-        
-                <form class = 'sum' action='/summary'>
-        <input type="submit" value='Summary'>
+      <h1>Pick a Destination</h1>
+      <div class="container-fluid">
+        <div class="row">
+          <form action="/price_over_time" >
+            <select name="airport" class="custom-select">
+              <option value="BOS">Boston, MA</option>
+              <option value="CHI">Chicago, IL</option>
+              <option value="DEN">Denver, CO</option>
+              <option value="LAX">Los Angeles, CA</option>
+              <option value="LAS">Las Vegas, NV</option>
+              <option value="ORL">Orlando, FL</option>
+              <option value="DCA">Washington D.C., MD</option>
+              <option value="SFO">San Francisco, CA</option>
+              <option value="SEA">Seattle, WA</option>
+            </select> 
+            <select name="date" class="custom-select">
+              <option value="2018-12-22">Dec 22nd</option>
+              <option value="2018-12-23">Dec 23rd</option>
+              <option value="2018-12-24">Dec 24th</option>
+              <option value="2018-12-25">Dec 25th</option>
+              <option value="2018-12-26">Dec 26th</option>
+              <option value="2018-12-27">Dec 27th</option>
+              <option value="2018-12-28">Dec 28th</option>
+              <option value="2018-12-29">Dec 29th</option>
+              <option value="2018-12-30">Dec 30th</option>
+              <option value="2018-12-31">Dec 31th</option>
+              <option value="2019-01-01">Jan 1st</option>
+            </select>
+            <br><br>
+            <input type="submit">
           </form>
-        
-        <h4> <i>"The past cannot be changed. <br> The future is yet in your power" - Unknown</i> </h4>
         </div>
-           
+        
+        <form id = 'sum' action='/summary'>
+          <input type="submit" value='Summary'>
+        </form>
       </div>
+    </div>
   </body>
 </html>

@@ -9,17 +9,16 @@
     <div class="container-fluid">
       <div class="row">
         <main role="main" class="col-md-9 ml-sm-auto col-lg-12 px-4">
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">Summary</h1>
-            <div class="btn-toolbar mb-2 mb-md-0">
-              <div class="btn-group mr-2">
-                <form action="/">
-                    <button class="btn btn-sm btn-outline-secondary" type="submit" formaction="/">Explore Flights</button>
-                </form>
-              </div>
-              
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Summary</h1>
+                <div class="btn-toolbar mb-2 mb-md-0">
+                    <div class="btn-group mr-2">
+                        <form action="/">
+                            <button class="btn btn-sm btn-outline-secondary" type="submit" formaction="/">Explore Flights</button>
+                        </form>
+                    </div>
+                </div>
             </div>
-          </div>
             <canvas class="my-4 w-100" id="bargraph" width="800" height="350"></canvas>
             <h3>Today's Cheapest Flights from New York</h3>
             <div class="table-responsive">
@@ -36,7 +35,7 @@
                     <tbody>
                         {%for flight in default_data%}
                         <tr>
-                             <td>
+                            <td>
                                 {% if flight.Destination == 'LAS' %}
                                     {{'Las Vegas'}}
                                 {% endif %}
@@ -63,43 +62,37 @@
                                 {% endif %}
                                 {% if flight.Destination == 'ORL' %}
                                     {{'Orlando'}}
-                                {% endif %}
-                                
+                                {% endif %} 
                             </td>
                             <td>{{flight.Airline}}</td>
                             <td>{{flight.Price}}</td>
                             <td>{{flight.Date}}</td>
                             <td>{{flight.Time}}</td>
                             <td>{{flight.Timestamp}}</td>
-                            <td><a href=
-                                   "{{'https://www.kayak.com/flights/NYC-%s/%s'|format(flight.Destination,flight.Date)}}">Check Price Now</a></td>
+                            <td><a href= "{{'https://www.kayak.com/flights/NYC-%s/%s'|format(flight.Destination,flight.Date)}}">
+                               Check Price Now</a>
+                            </td>
                         </tr>
                         {%endfor%}
                     </tbody>
                 </table>
             </div>
-        
-          
         </main>
-      </div>
     </div>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="../../assets/js/vendor/popper.min.js"></script>
     <script src="../../dist/js/bootstrap.min.js"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
 
     <script>
         var ctx = document.getElementById("bargraph");
         var bargraph = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: {{date_bos|safe}},
-          datasets: [{
+            labels: {{date_bos|safe}},
+            datasets: [{
                 label: "Boston",
                 data: {{avg_bos|safe}},
                 lineTension: 0,
